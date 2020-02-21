@@ -1,0 +1,417 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway';
+
+body{ font-family: Raleway; text-align: center; background-color: oldlace;}
+.margin{ margin: 5vw; }
+
+#gallerybox{
+    display: flex;
+    justify-content: center;
+}
+
+
+.justify{
+  text-align: justify;
+}
+
+.eachpic p {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+.eachpic:hover p {
+   
+    visibility: visible;
+    opacity: 1;
+}
+
+.authorsgallery {
+display: flex;
+flex-wrap: wrap;
+list-style: none;
+}
+
+.eachpic {
+height: 40vh;
+flex-grow: 1;
+position: relative;
+text-align: center;
+color: white;
+margin: 1vw;
+
+}
+
+.eachpic:hover .authors{
+  opacity: 0.5;
+}
+
+.pictext {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+ 
+}
+
+.hidden {
+  opacity: 0;
+}
+
+@keyframes fade-in {
+  from {opacity: 0; transform: scale(.7,.7)}
+  to {opacity: 1;}
+}
+.fade-in-element {
+animation: fade-in 1.4s;
+}
+
+
+
+.eachpic:last-child {
+
+flex-grow: 10;
+}
+
+.authors {
+max-height: 100%;
+min-width: 100%;
+object-fit: cover;
+vertical-align: bottom;
+opacity: 1;
+transition: opacity .5s ease-out;
+-moz-transition: opacity .5s ease-out;
+-webkit-transition: opacity .5s ease-out;
+-o-transition: opacity .5s ease-out;
+}
+
+
+
+@media (max-aspect-ratio: 1/1) {
+.eachpic {
+height: 30vh;
+}
+}
+
+@media (max-aspect-ratio: 1/1) {
+.image {
+height: 30vh;
+}
+}
+
+
+@media (max-height: 480px) {
+.eachpic {
+height: 80vh;
+}
+}
+
+@media (max-height: 480px) {
+    .image {
+    height: 80vh;
+    }
+    }
+
+
+
+@media (max-aspect-ratio: 1/1) and (max-width: 480px) {
+.authorsgallery {
+flex-direction: row;
+}
+
+.eachpic {
+height: auto;
+width: 100%;
+}
+.authors {
+width: 100%;
+max-height: 75vh;
+min-width: 0;
+}
+}
+
+.authorname {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+.eachpic div.underlined {
+    color: black;
+    flex: 1;
+    font-size: 2em;
+    line-height: 1.2;
+    text-decoration: none;
+    background-image: linear-gradient(to right, yellow 0, yellow 100%);
+    background-position: 0 1.2em;
+    background-size: 0 100%;
+    background-repeat: no-repeat;
+    transition: background 0.5s;
+    
+}
+.eachpic:hover div.underlined {
+    background-size: 100% 100%;
+}
+.underlined--thin {
+    background-image: linear-gradient(to right, black 0, black 100%);
+}
+.underlined--thick {
+    background-position: 0 -0.1em;
+}
+.eachpic div.underlined--offset {
+    background-position: 0 0.2em;
+}
+.underlined--gradient {
+    background-position: 0 -0.1em;
+    background-image: linear-gradient(to right, yellow 0, lightgreen 100%);
+}
+.underlined--reverse {
+    background-position: 100% -0.1em;
+    transition: background 1s;
+    background-image: linear-gradient(to right, yellow 0, yellow 100%);
+}
+
+a{
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit;
+}
+
+#logo {
+    align-content: center;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
+/*
+
+All grid code is placed in a 'supports' rule (feature query) at the bottom of the CSS (Line 77). 
+        
+The 'supports' rule will only run if your browser supports CSS grid.
+
+Flexbox is used as a fallback so that browsers which don't support grid will still recieve an identical layout.
+
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:500);
+
+
+.container {
+	max-width: 100rem;
+	margin: 0 auto;
+	padding: 0 2rem 2rem;
+}
+
+.heading {
+	font-family: "Montserrat", Arial, sans-serif;
+	font-size: 4rem;
+	font-weight: 500;
+	line-height: 1.5;
+	text-align: center;
+	padding: 3.5rem 0;
+	color: #1a1a1a;
+}
+
+.heading span {
+	display: block;
+}
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	/* Compensate for excess margin on outer gallery flex items */
+	margin: -1rem -1rem;
+}
+
+.gallery-item {
+	/* Minimum width of 24rem and grow to fit available space */
+	flex: 1 0 24rem;
+	/* Margin value should be half of grid-gap value as margins on flex items don't collapse */
+	margin: 1rem;
+	box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    display: flex;
+}
+
+.gallery-image {
+	display: block;
+	width: auto;
+	height: 250px;
+	object-fit: cover;
+	transition: transform 400ms ease-out;
+}
+
+.gallery-image:hover {
+	transform: scale(1.15);
+}
+
+/*
+
+The following rule will only run if your browser supports CSS grid.
+
+Remove or comment-out the code block below to see how the browser will fall-back to flexbox styling. 
+
+*/
+
+@supports (display: grid) {
+	.gallery {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+		grid-gap: 2rem;
+	}
+
+	.gallery,
+	.gallery-item {
+        margin: 0;
+        display: flex;
+	}
+}
+
+.scale-down-center {
+	-webkit-animation: scale-down-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: scale-down-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+
+ @-webkit-keyframes scale-down-center {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    100% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+  }
+  @keyframes scale-down-center {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    100% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+  }
+  
+  .fade-in {
+	-webkit-animation: fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1.5s both;
+	        animation: fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1.5s both;
+}
+
+ @-webkit-keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  /*authors*/
+.puff-in-center {
+	-webkit-animation: puff-in-center 0.7s cubic-bezier(0.785, 0.135, 0.150, 0.860) 0.5s both;
+	        animation: puff-in-center 0.7s cubic-bezier(0.785, 0.135, 0.150, 0.860) 0.5s both;
+}
+
+
+ @-webkit-keyframes puff-in-center {
+    0% {
+      -webkit-transform: scale(2);
+              transform: scale(2);
+      -webkit-filter: blur(4px);
+              filter: blur(4px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes puff-in-center {
+    0% {
+      -webkit-transform: scale(2);
+              transform: scale(2);
+      -webkit-filter: blur(4px);
+              filter: blur(4px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  
+.card-flex{
+    display: flex;
+    justify-content: space-between;
+}
+  .biopic {
+      height: 40vw;
+      width: auto;
+   
+  }
+
+  .review {
+    margin: auto;
+  }
+
+  @media (max-height: 600px) {
+    .card-flex {
+    display: block;
+    }
+    .biopic {
+      height: 300px ;
+    }
+    }
+    .bio{
+      text-align: justify;
+    }
+
+  /* footer */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    
+  }
+
+  hr.limit {
+		height: 10px;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
+  .footbuttons {
+    list-style: none;
+    text-align: left;
+  }
+
+  /*Distribuidores*/
+  #distribuidores {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  hr.separador {
+    width: 20px;
+  }
+
+  #qs {
+    line-height: 25px;
+    padding: 5vw;
+  }
+

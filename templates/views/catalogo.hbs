@@ -1,0 +1,26 @@
+
+<div class="container">
+	<h1>Catálogo</h1>
+</div>
+<h3><a href="/catalogo" class="active list-group-item">All Categories</a>
+				{{# each data.categories }}
+				<a href="{{categoryUrl key}}" class="false list-group-item">{{name}}</a>
+				{{/each}}</h3>
+    <div class="gallery margin">
+		{{#each data.posts.results}}
+            <div class="gallery-item hidden" data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}">
+                {{#if image}}<img src="/uploads/files/{{{this.image.filename}}}" class="gallery-image">{{/if}}
+	<div class="reviews">
+                        <h2><a href="{{postUrl slug}}">{{{title}}}</a></h2>
+							
+					<p>{{{content.brief}}}</p>
+					{{#if content.extended}}<p class="read-more"><a href="{{postUrl slug}}">Read more...</a></p>{{/if}}
+					</p>       
+					</div>     
+            </div>
+		 {{/each}}
+
+		 	
+				
+			
+		</div>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letras del Sur</title>
+    <link rel="stylesheet" href="/css/examples.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/slider-pro.min.css" />
+    <link rel="stylesheet" href="/css/buttons.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+	<body onload="animateHTML().init();">
+    <div class="flex">
+        <a href="/"> <img id="logo" class="margin" src="http://letrasdelsureditora.com.ar/wp-content/uploads/2013/11/logo.png"
+            alt="logo"></a>
+    </div>
+    <div class="nav brackets margin topnav" id="myTopnav">
+        <a href="/">Inicio</a>
+        <a onclick="backToQS()">Quiénes Somos</a>
+        <a onclick="backToCatalogo()">Catálogo</a>
+        <a onclick="backToAutores()">Autores</a>
+        <a onclick="backToDistribucion()">Distribución</a>
+        <a onclick="backToPrensa()">Prensa</a>
+        
+        <a href="javascript:void(0);" class="icon" onclick="respNav()">
+        <i class="fa fa-bars"></i></a>
+    </div>
+			{{{body}}}
+		 <div class="footer margin flex nav">
+        <div class="brackets">
+        <ul class="footbuttons margin">
+        <li><a>Inicio</a></li>
+        <li><a>Quiénes Somos</a</li>
+        <li><a>Catálogo</a></li>
+        <li><a>Distribución</a></li>
+        <li><a>Prensa</a></li>
+        <li><a>Colecciones</a></li>
+        </ul>
+    </div>
+        <img id="logo" class="margin" src="http://letrasdelsureditora.com.ar/wp-content/uploads/2013/11/logo.png"
+        alt="logo">
+    </div>
+
+
+
+    <script src="/libs/jquery-1.11.0.min.js"></script>
+    <script src="/js/jquery.sliderPro.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function ($) {
+            $('#slider').sliderPro({
+                width: 960,
+                height: 500,
+                arrows: true,
+                buttons: false,
+                waitForLayers: true,
+                thumbnailWidth: 200,
+                thumbnailHeight: 100,
+                thumbnailPointer: true,
+                autoplay: true,
+                autoScaleLayers: false,
+                breakpoints: {
+                    500: {
+                        thumbnailWidth: 120,
+                        thumbnailHeight: 50
+                    }
+                }
+            });
+            	$( '#example5' ).sliderPro({
+			width: 870,
+			height: 600,
+			orientation: 'vertical  ',
+			loop: false,
+			arrows: true,
+			buttons: false,
+            autoplay: false,
+			thumbnailsPosition: 'right',
+			thumbnailPointer: true,
+			thumbnailWidth: 290,
+			breakpoints: {
+				800: {
+					thumbnailsPosition: 'bottom',
+					thumbnailWidth: 270,
+					thumbnailHeight: 100
+				},
+				500: {
+					thumbnailsPosition: 'bottom',
+					thumbnailWidth: 120,
+					thumbnailHeight: 50
+				}
+			}
+		});
+        });
+       
+	
+	
+
+        function respNav() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "nav brackets margin topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "nav brackets margin topnav";
+            }
+        }
+
+        var animateHTML = function () {
+            var elems;
+            var windowHeight;
+
+            function init() {
+
+                elems = document.querySelectorAll('.hidden');
+                windowHeight = window.innerHeight;
+                addEventHandlers();
+                checkPosition();
+            }
+
+            function addEventHandlers() {
+                window.addEventListener('scroll', checkPosition);
+                window.addEventListener('resize', init);
+            }
+
+            function checkPosition() {
+                for (var i = 0; i < elems.length; i++) {
+                    var positionFromTop = elems[i].getBoundingClientRect().top;
+                    if (positionFromTop - windowHeight <= 0) {
+                        elems[i].className = elems[i].className.replace(
+                            'hidden',
+                            'fade-in-element'
+                        );
+                    }
+
+                    
+                }
+            }
+            
+
+            return {
+                init: init
+            };
+        };
+
+  //document.addEventListener("DOMContentLoaded",
+  function backToCatalogo() {
+    window.location.pathname = '/catalogo'
+  };
+
+  function backToQS() {
+    window.location.pathname = '/quienesomos'
+  };
+  function backToDistribucion() {
+    window.location.pathname = '/distribucion'
+  };
+  function backToPrensa() {
+    window.location.pathname = '/prensa'
+  };
+  function backToAutores() {
+    window.location.pathname = '/autores'
+  };
+
+
+
+    </script>
+</body>
+
+</html>

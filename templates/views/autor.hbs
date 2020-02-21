@@ -1,0 +1,23 @@
+<ul class="margin authorsgallery">
+  {{#if data.autor}}
+
+  <div class="card-flex margin">
+
+    <img class="puff-in-center biopic" src="/uploads/files/{{{data.autor.image.filename}}}">
+    <div class="fade-in margin">
+      <h1 >
+        {{{data.autor.name}}}
+      </h1>
+
+      <p>
+        {{{data.autor.bio.extended}}}
+
+      </p>
+    </div>
+  </div>
+  <div class="comment">
+    If you didn't catch the animation, hit Cmd + Shift + 5 or refresh the page :)
+  </div>
+
+  {{/if}}
+</ul>
