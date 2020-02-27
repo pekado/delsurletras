@@ -18,8 +18,8 @@ var Autor = new keystone.List('autor', {
 });
 
 Autor.add({
-	name: { type: String, required: true },
-	image: {  type: Types.File,
+	name: { type: String, required: true, noedit: true },
+	image: { type: Types.File,
 		storage: myStorage },
 	bio: {
 		extended: { type: Types.Html, wysiwyg: true, height: 400 },

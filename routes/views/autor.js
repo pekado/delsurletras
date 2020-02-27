@@ -18,12 +18,12 @@ exports = module.exports = function (req, res) {
 	view.on('init', function (next) {
 
 		var q = keystone.list('autor').model.findOne({
-			name: locals.filters.autor,
+			slug: locals.filters.autor,
 		});
 
 		q.exec(function (err, result) {
 			locals.data.autor = result;
-			console.log(result);
+			console.log(locals.filters.autor);
 			next(err);
 		});
 
