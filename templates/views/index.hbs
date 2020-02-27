@@ -152,78 +152,28 @@
     </div>
 
 
-
-
-    <h1 class="margin">Autores</h1>
+<h1 class="margin ">Autores</h1>
 
     <ul class="margin authorsgallery">
-
+    {{#if data.autor}}
+		{{#each data.autor}}
         <li class="eachpic hidden">
-            <img class="authors" src="img/autores/lezcano.jpg" alt="A Toyota Previa covered in graffiti" loading="lazy">
+            <img class="authors" src="/uploads/files/{{image.filename}}" >
             <div class="pictext underlined underlined--offset">
-                <p><a href="#"> Walter Lezcano</a></p>
+                <p><a href="/autor/{{autorUrl slug}}"> {{{name}}}</a></p>
             </div>
         </li>
-        <li class="eachpic hidden">
-            <img class="authors" src="img/autores/arias.jpg" alt="A Toyota Previa covered in graffiti" loading="lazy">
-            <div class="pictext underlined underlined--offset">
-                <p><a href="#"> Walter Lezcano</a></p>
-            </div>
-        </li>
-        <li class="eachpic hidden">
-            <img class="authors" src="img/autores/boix.jpg" alt="A Toyota Previa covered in graffiti" loading="lazy">
-            <div class="pictext underlined underlined--offset">
-                <p><a href="#"> Walter Lezcano</a></p>
-            </div>
-        </li>
-
-        <li class="eachpic hidden">
-            <img class="authors" src="img/autores/lutereau.jpg" alt="A Toyota Previa covered in graffiti"
-                loading="lazy">
-            <div class="pictext underlined underlined--offset">
-                <p><a href="#"> Walter Lezcano</a></p>
-            </div>
-        </li>
-        <li class="eachpic hidden">
-            <img class="authors" src="img/autores/maneti.jpg" alt="A Toyota Previa covered in graffiti" loading="lazy">
-            <div class="pictext underlined underlined--offset">
-                <p><a href="#"> Walter Lezcano</a></p>
-            </div>
-        </li>
-        <li class="eachpic hidden">
-            <img class="authors" src="img/autores/vaccarini.jpg" alt="A Toyota Previa covered in graffiti"
-                loading="lazy">
-            <div class="pictext underlined underlined--offset">
-                <p><a href="#"> Walter Lezcano</a></p>
-            </div>
-        </li>
-        <li class="eachpic hidden">
-            <img class="authors" src="img/autores/zunini.jpg" alt="A Toyota Previa covered in graffiti" loading="lazy">
-            <div class="pictext underlined underlined--offset">
-                <p><a href="#"> Walter Lezcano</a></p>
-            </div>
-        </li>
-        <li class="eachpic hidden">
-            <img class="authors" src="img/autores/accorinti.jpg" alt="A Toyota Previa covered in graffiti"
-                loading="lazy">
-            <div class="pictext underlined underlined--offset">
-                <p><a href="#"> Walter Lezcano</a></p>
-            </div>
-        </li>
-        <li class="eachpic hidden">
-            <img class="authors" src="img/autores/bogado.jpg" alt="A Toyota Previa covered in graffiti" loading="lazy">
-            <div class="pictext underlined underlined--offset">
-                <p><a href="#"> Walter Lezcano</a></p>
-            </div>
-        </li>
-
+	{{/each}}
+    {{/if}}
+    </ul>
         <!--  Adding an empty <li> here so the final photo doesn't stretch like crazy. Try removing it and see what happens!  -->
         <li></li>
     </ul>
-
+    
+     <a href="catalogo"><h1>Catálogo</span></h1></a>
     <div class="container">
 
-        <h1>Catálogo</span></h1>
+       
 
         <div class="gallery">
 

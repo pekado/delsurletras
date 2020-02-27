@@ -21,19 +21,22 @@ var Post = new keystone.List('Post', {
 Post.add({
 	title: { type: String, required: true },
 	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
-	author: { type: Types.Relationship, ref: 'User', index: true },
-	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
+	author: { type: String },
+	publishedDate: { type: Types.Date, index: true },
 	image: {  type: Types.File,
 				storage: myStorage },
-	content: {
-		brief: { type: Types.Html, wysiwyg: true, height: 150 },
-		extended: { type: Types.Html, wysiwyg: true, height: 400 },
+	reseña: {
+		corta: { type: Types.Html, wysiwyg: true, height: 150 },
+		extendida: { type: Types.Html, wysiwyg: true, height: 400 },
 	},
+	ficha: { formato: {type: String, wysiwyg:true, height:50 },
+			paginas: {type: String, wysiwyg:true, height:50 }	
+		},
 	categories: { type: Types.Relationship, ref: 'PostCategory', many: true },
 });
 
-Post.schema.virtual('content.full').get(function () {
-	return this.content.extended || this.content.brief;
+Post.schema.virtual('reseña.full').get(function () {
+	return this.reseña.extendida || this.reseña.corta;
 });
 
 Post.defaultColumns = 'title, state|20%, author|20%, publishedDate|20%';

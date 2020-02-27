@@ -1,187 +1,167 @@
 @import 'https://fonts.googleapis.com/css?family=Raleway';
 
-body{ font-family: Raleway; text-align: center; background-color: oldlace;}
-.margin{ margin: 5vw; }
-
-#gallerybox{
-    display: flex;
-    justify-content: center;
+body {
+  font-family: Raleway;
+  text-align: center;
+  background-color: oldlace;
+  margin-left: 2vw;
+  margin-right: 2vw;
 }
 
+.margin {
+  margin: 5vw;
+}
 
-.justify{
+.margintext{
+  margin:1vw;
+}
+
+.justify {
   text-align: justify;
 }
 
+.colecciones{
+  font-size: 20px;
+  font-weight: 200;
+font-style: normal;
+line-height: 60px;
+letter-spacing: 0.094em;
+}
+
+/* galería autores */
+#gallerybox {
+  display: flex;
+  justify-content: center;
+}
+
 .eachpic p {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
 }
 
 .eachpic:hover p {
-   
-    visibility: visible;
-    opacity: 1;
+
+  visibility: visible;
+  opacity: 1;
 }
 
 .authorsgallery {
-display: flex;
-flex-wrap: wrap;
-list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
 }
 
 .eachpic {
-height: 40vh;
-flex-grow: 1;
-position: relative;
-text-align: center;
-color: white;
-margin: 1vw;
+  height: 40vh;
+  flex-grow: 1;
+  position: relative;
+  text-align: center;
+  color: white;
+  margin: 1vw;
 
 }
 
-.eachpic:hover .authors{
+.eachpic:hover .authors {
   opacity: 0.5;
 }
 
 .pictext {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
- 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
 }
 
 .hidden {
   opacity: 0;
 }
 
+/*efecto fade-in*/
+
 @keyframes fade-in {
-  from {opacity: 0; transform: scale(.7,.7)}
-  to {opacity: 1;}
+  from {
+    opacity: 0;
+    transform: scale(.7, .7)
+  }
+
+  to {
+    opacity: 1;
+  }
 }
+
 .fade-in-element {
-animation: fade-in 1.4s;
+  animation: fade-in 1.4s;
 }
 
 
 
 .eachpic:last-child {
-
-flex-grow: 10;
+  flex-grow: 10;
 }
 
 .authors {
-max-height: 100%;
-min-width: 100%;
-object-fit: cover;
-vertical-align: bottom;
-opacity: 1;
-transition: opacity .5s ease-out;
--moz-transition: opacity .5s ease-out;
--webkit-transition: opacity .5s ease-out;
--o-transition: opacity .5s ease-out;
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+  opacity: 1;
+  transition: opacity .5s ease-out;
+  -moz-transition: opacity .5s ease-out;
+  -webkit-transition: opacity .5s ease-out;
+  -o-transition: opacity .5s ease-out;
 }
 
 
 
-@media (max-aspect-ratio: 1/1) {
-.eachpic {
-height: 30vh;
-}
-}
-
-@media (max-aspect-ratio: 1/1) {
-.image {
-height: 30vh;
-}
-}
-
-
-@media (max-height: 480px) {
-.eachpic {
-height: 80vh;
-}
-}
-
-@media (max-height: 480px) {
-    .image {
-    height: 80vh;
-    }
-    }
 
 
 
-@media (max-aspect-ratio: 1/1) and (max-width: 480px) {
-.authorsgallery {
-flex-direction: row;
-}
 
-.eachpic {
-height: auto;
-width: 100%;
-}
-.authors {
-width: 100%;
-max-height: 75vh;
-min-width: 0;
-}
-}
-
+/*efecto en el nombre de los autores */
 .authorname {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
 }
 
 .eachpic div.underlined {
-    color: black;
-    flex: 1;
-    font-size: 2em;
-    line-height: 1.2;
-    text-decoration: none;
-    background-image: linear-gradient(to right, yellow 0, yellow 100%);
-    background-position: 0 1.2em;
-    background-size: 0 100%;
-    background-repeat: no-repeat;
-    transition: background 0.5s;
-    
-}
-.eachpic:hover div.underlined {
-    background-size: 100% 100%;
-}
-.underlined--thin {
-    background-image: linear-gradient(to right, black 0, black 100%);
-}
-.underlined--thick {
-    background-position: 0 -0.1em;
-}
-.eachpic div.underlined--offset {
-    background-position: 0 0.2em;
-}
-.underlined--gradient {
-    background-position: 0 -0.1em;
-    background-image: linear-gradient(to right, yellow 0, lightgreen 100%);
-}
-.underlined--reverse {
-    background-position: 100% -0.1em;
-    transition: background 1s;
-    background-image: linear-gradient(to right, yellow 0, yellow 100%);
+  color: black;
+  flex: 1;
+  font-size: 2em;
+  line-height: 1.2;
+  text-decoration: none;
+  background-image: linear-gradient(to right, yellow 0, yellow 100%);
+  background-position: 0 1.2em;
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+  transition: background 0.5s;
+
 }
 
-a{
-    color: inherit; /* blue colors for links too */
-    text-decoration: inherit;
+.eachpic:hover div.underlined {
+  background-size: 100% 100%;
+}
+
+.eachpic div.underlined--offset {
+  background-position: 0 0.2em;
+}
+
+
+a {
+  color: inherit;
+  /* blue colors for links too */
+  text-decoration: inherit;
 }
 
 #logo {
-    align-content: center;
+  align-content: center;
 }
 
 .flex {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 /*
@@ -198,52 +178,55 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
 
 
 .container {
-	max-width: 100rem;
-	margin: 0 auto;
-	padding: 0 2rem 2rem;
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 0 2rem 2rem;
 }
 
 .heading {
-	font-family: "Montserrat", Arial, sans-serif;
-	font-size: 4rem;
-	font-weight: 500;
-	line-height: 1.5;
-	text-align: center;
-	padding: 3.5rem 0;
-	color: #1a1a1a;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 4rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  padding: 3.5rem 0;
+  color: #1a1a1a;
 }
 
 .heading span {
-	display: block;
+  display: block;
 }
 
 .gallery {
-	display: flex;
-	flex-wrap: wrap;
-	/* Compensate for excess margin on outer gallery flex items */
-	margin: -1rem -1rem;
+  display: flex;
+  flex-wrap: wrap;
+  /* Compensate for excess margin on outer gallery flex items */
+  margin: -1rem -1rem;
 }
 
 .gallery-item {
-	/* Minimum width of 24rem and grow to fit available space */
-	flex: 1 0 24rem;
-	/* Margin value should be half of grid-gap value as margins on flex items don't collapse */
-	margin: 1rem;
-	box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
-    overflow: hidden;
-    display: flex;
+  /* Minimum width of 24rem and grow to fit available space */
+  flex: 1 0 24rem;
+  /* Margin value should be half of grid-gap value as margins on flex items don't collapse */
+  margin: 1rem;
+  box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  display: flex;
+  max-width: 600px;
+  border:1px solid #000;
 }
 
 .gallery-image {
-	display: block;
-	width: auto;
-	height: 250px;
-	object-fit: cover;
-	transition: transform 400ms ease-out;
+  display: block;
+  width: auto;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 400ms ease-out;
+  border-right:1px solid #000;
 }
 
 .gallery-image:hover {
-	transform: scale(1.15);
+  transform: scale(1.15);
 }
 
 /*
@@ -255,163 +238,239 @@ Remove or comment-out the code block below to see how the browser will fall-back
 */
 
 @supports (display: grid) {
-	.gallery {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
-		grid-gap: 2rem;
-	}
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    grid-gap: 2rem;
+  }
 
-	.gallery,
-	.gallery-item {
-        margin: 0;
-        display: flex;
-	}
+  .gallery,
+  .gallery-item {
+    display: flex;
+  }
 }
 
 .scale-down-center {
-	-webkit-animation: scale-down-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: scale-down-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: scale-down-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: scale-down-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 
- @-webkit-keyframes scale-down-center {
-    0% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-    }
-    100% {
-      -webkit-transform: scale(0.5);
-              transform: scale(0.5);
-    }
+@-webkit-keyframes scale-down-center {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
-  @keyframes scale-down-center {
-    0% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-    }
-    100% {
-      -webkit-transform: scale(0.5);
-              transform: scale(0.5);
-    }
+
+  100% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
   }
-  
-  .fade-in {
-	-webkit-animation: fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1.5s both;
-	        animation: fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1.5s both;
 }
 
- @-webkit-keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+@keyframes scale-down-center {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
-  @keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+
+  100% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
   }
-  /*authors*/
+}
+
+.fade-in {
+  -webkit-animation: fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1.5s both;
+  animation: fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1.5s both;
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/*authors*/
 .puff-in-center {
-	-webkit-animation: puff-in-center 0.7s cubic-bezier(0.785, 0.135, 0.150, 0.860) 0.5s both;
-	        animation: puff-in-center 0.7s cubic-bezier(0.785, 0.135, 0.150, 0.860) 0.5s both;
+  -webkit-animation: puff-in-center 0.7s cubic-bezier(0.785, 0.135, 0.150, 0.860) 0.5s both;
+  animation: puff-in-center 0.7s cubic-bezier(0.785, 0.135, 0.150, 0.860) 0.5s both;
 }
 
 
- @-webkit-keyframes puff-in-center {
-    0% {
-      -webkit-transform: scale(2);
-              transform: scale(2);
-      -webkit-filter: blur(4px);
-              filter: blur(4px);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-      -webkit-filter: blur(0px);
-              filter: blur(0px);
-      opacity: 1;
-    }
+@-webkit-keyframes puff-in-center {
+  0% {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+    -webkit-filter: blur(4px);
+    filter: blur(4px);
+    opacity: 0;
   }
-  @keyframes puff-in-center {
-    0% {
-      -webkit-transform: scale(2);
-              transform: scale(2);
-      -webkit-filter: blur(4px);
-              filter: blur(4px);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-      -webkit-filter: blur(0px);
-              filter: blur(0px);
-      opacity: 1;
-    }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
   }
-  
-.card-flex{
-    display: flex;
-    justify-content: space-between;
 }
-  .biopic {
-      height: 40vw;
-      width: auto;
-   
+
+@keyframes puff-in-center {
+  0% {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+    -webkit-filter: blur(4px);
+    filter: blur(4px);
+    opacity: 0;
   }
 
-  .review {
-    margin: auto;
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
   }
+}
 
-  @media (max-height: 600px) {
-    .card-flex {
+.card-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.biopic {
+  height: 40vw;
+  width: auto;
+  border:1px solid #000;
+}
+
+.review {
+  margin: auto;
+}
+
+
+
+/* footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+hr.limit {
+  height: 10px;
+  border: 0;
+  box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
+.footbuttons {
+  list-style: none;
+  text-align: left;
+}
+
+/*Distribuidores*/
+#distribuidores {
+  margin: 0 auto;
+  text-align: center;
+}
+
+hr.separador {
+  width: 20px;
+}
+
+#qs {
+  line-height: 25px;
+  padding: 5vw;
+}
+
+.bio {
+  text-align: justify;
+}
+
+/*media queries */
+@media (max-height: 600px) {
+  .card-flex {
     display: block;
-    }
-    .biopic {
-      height: 300px ;
-    }
-    }
-    .bio{
-      text-align: justify;
-    }
-
-  /* footer */
-  .footer {
-    display: flex;
-    justify-content: space-between;
-    
   }
 
-  hr.limit {
-		height: 10px;
-	border: 0;
-	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+  .biopic {
+    height: 300px;
+  }
 }
 
-  .footbuttons {
-    list-style: none;
-    text-align: left;
+
+@media (max-aspect-ratio: 1/1) and (max-width: 480px) {
+  .authorsgallery {
+    flex-direction: row;
   }
 
-  /*Distribuidores*/
-  #distribuidores {
-    margin: 0 auto;
-    text-align: center;
+  .eachpic {
+    height: auto;
+    width: 100%;
   }
 
-  hr.separador {
-    width: 20px;
+  .authors {
+    width: 100%;
+    max-height: 75vh;
+    min-width: 0;
   }
+}
 
-  #qs {
-    line-height: 25px;
-    padding: 5vw;
+@media (max-aspect-ratio: 1/1) {
+  .eachpic {
+    height: 100%;
   }
+}
 
+@media (max-aspect-ratio: 1/1) {
+  .image {
+    height: 30vh;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .image {
+    height: 80vh;
+  }
+  .footbuttons{
+    display: none;
+
+  }
+  .footer{
+    justify-content: center;
+  }
+}
+
+/* libro */
+.reseña {
+  text-align: left;
+  font-weight: 500;
+font-size: 16px;
+line-height: 20px;
+font-style: normal;
+}
+
+.titulo {
+  font-size: 2.5em;
+line-height: 24px;
+letter-spacing: 0.132em;
+font-style: normal;
+margin: 0 auto;
+}

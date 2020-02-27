@@ -1,21 +1,23 @@
-<div class="container">
-	<div class="row">
-		<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-			<article>
-				<p><a href="/blog">&larr; back to the blog</a></p>
-				<hr>
-				<header>
-					<h1>{{data.post.title}}</h1>
-					<h5>
-						{{{categoryList data.post.categories prefix="Posted in "}}}
-						{{#if author.name.first}}by {{author.name.first}}{{/if}}
-					</h5>
-				</header>
-				<div class="post">
-					{{#if data.post.image}}<img src="{{{cloudinaryUrl data.post.image width=750 height=450 crop='fit' }}}" class="img-responsive">{{/if}}
-					{{{data.post.content.extended}}}
-				</div>
-			</article>
+<ul class="margin authorsgallery">
+	{{#if data.post}}
+	
+	<div class="card-flex ">
+		
+		<img class="puff-in-center biopic" src="/uploads/files/{{{data.post.image.filename}}}">
+		<div class="fade-in margin reseña">
+			<h1 class="titulo">
+			{{{data.post.title}}}
+		</h1>
+			<p >
+				{{{data.post.reseña.extendida}}}
+			</p>
+			<div>
+				Formato: {{data.post.ficha.formato}}<br>
+				Páginas: {{data.post.ficha.paginas}}
+
+			</div>
 		</div>
 	</div>
-</div>
+	
+	{{/if}}
+</ul>
