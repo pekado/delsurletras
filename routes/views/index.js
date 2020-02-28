@@ -10,6 +10,7 @@ exports = module.exports = function (req, res) {
 	locals.section = 'home';
 	locals.data = {
 		autores: [],
+		posts: [],
 	};
 	view.on('init', function (next) {
 
@@ -21,6 +22,16 @@ exports = module.exports = function (req, res) {
 			next(err);
 		});
 
+	});
+	// Load the posts
+	view.on('init', function (next) {
+
+		var q = keystone.list('Post').model.find().limit(6).sort('_id');
+		q.exec(function (err, results) {
+			locals.data.posts = results;
+			console.log(locals.data.posts);
+			next(err);
+		});
 	});
 	// Render the view
 	view.render('index');

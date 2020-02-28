@@ -152,7 +152,7 @@
     </div>
 
 
-<h1 class="margin ">Autores</h1>
+<a href="autores"><h1 class="margin title">Autores</h1></a>
 
     <ul class="margin authorsgallery">
     {{#if data.autor}}
@@ -165,63 +165,25 @@
         </li>
 	{{/each}}
     {{/if}}
-    </ul>
+    
         <!--  Adding an empty <li> here so the final photo doesn't stretch like crazy. Try removing it and see what happens!  -->
         <li></li>
     </ul>
     
-     <a href="catalogo"><h1>Catálogo</span></h1></a>
+     <a href="catalogo"><h1 class="margin title">Catálogo</span></h1></a>
     <div class="container">
 
-       
-
-        <div class="gallery">
-
-            <div class="gallery-item hidden">
-                <img class="gallery-image"
-                    src="http://letrasdelsureditora.com.ar/wp-content/uploads/2018/03/Tapa-Tierra-ganada-al-rio-1.jpg"
-                    alt="person writing in a notebook beside by an iPad, laptop, printed photos, spectacles, and a cup of coffee on a saucer">
-                    <div class="review">
-                        <h4>Título del libro</h4>
-                <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde voluptates molestias cupiditate illum asperiores vel, iure eum aliquam at, ex consectetur voluptatum odio magnam perferendis iste quaerat quibusdam adipisci accusantium?</p>
-            </div>
-            </div>
-
-            <div class="gallery-item hidden">
-                <img class="gallery-image"
-                    src="http://letrasdelsureditora.com.ar/wp-content/uploads/2018/03/Tapa-Libertad-bajo-palabras.jpg"
-                    alt="sunset behind San Francisco city skyline">
-                    <p class="review">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde numquam sapiente accusantium, minima sunt placeat a, dignissimos aliquam tempore, omnis labore sequi nobis dolor totam! Cum voluptatem facere amet voluptatibus.</p>
-            </div>
-
-            <div class="gallery-item hidden">
-                <img class="gallery-image"
-                    src="http://letrasdelsureditora.com.ar/wp-content/uploads/2016/10/Tapa-WEB-La-maestra-de-canto.jpg"
-                    alt="people holding umbrellas on a busy street at night lit by street lights and illuminated signs in Tokyo, Japan">
-                    <p class="review">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde numquam sapiente accusantium, minima sunt placeat a, dignissimos aliquam tempore, omnis labore sequi nobis dolor totam! Cum voluptatem facere amet voluptatibus.</p>
-            </div>
-
-            <div class="gallery-item hidden">
-                <img class="gallery-image"
-                    src="http://letrasdelsureditora.com.ar/wp-content/uploads/2016/03/Tapa-El-mundo-es-nuestro-30-03-16-1.jpg"
-                    alt="car interior from central back seat position showing driver and blurred view through windscreen of a busy road at night">
-                    <p class="review">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde numquam sapiente accusantium, minima sunt placeat a, dignissimos aliquam tempore, omnis labore sequi nobis dolor totam! Cum voluptatem facere amet voluptatibus.</p>
-            </div>
-
-            <div class="gallery-item hidden">
-                <img class="gallery-image"
-                    src="http://letrasdelsureditora.com.ar/wp-content/uploads/2016/03/Tapa-Escrito-al-pie-del-acapite-19-03-16-1.jpg"
-                    alt="back view of woman wearing a backpack and beanie waiting to cross the road on a busy street at night in New York City, USA">
-                    <p class="review">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde numquam sapiente accusantium, minima sunt placeat a, dignissimos aliquam tempore, omnis labore sequi nobis dolor totam! Cum voluptatem facere amet voluptatibus.</p>
-            </div>
-
-            <div class="gallery-item hidden">
-                <img class="gallery-image"
-                    src="http://letrasdelsureditora.com.ar/wp-content/uploads/2018/04/Tapa-El-%C3%ADntimo-traidor.jpg"
-                    alt="man wearing a black jacket, white shirt, blue jeans, and brown boots, playing a white electric guitar while sitting on an amp">
-                    <p class="review">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde numquam sapiente accusantium, minima sunt placeat a, dignissimos aliquam tempore, omnis labore sequi nobis dolor totam! Cum voluptatem facere amet voluptatibus.</p>
-            </div>
-
-        </div>
-
-    </div>
+       <div class="gallery margin">
+	{{#each data.posts}}
+	<div class="gallery-item hidden" data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}">
+		{{#if image}}<img src="/uploads/files/{{{this.image.filename}}}" class="gallery-image">{{/if}}
+		<div class="reviews">
+			<h2><a href="{{postUrl slug}}">{{{title}}}</a></h2>
+			<p>{{{reseña.corta}}}</p>
+			{{#if reseña.corta}}<p class="read-more"><a href="{{postUrl slug}}">Leer más</a></p>{{/if}}
+			</p>
+		</div>
+	</div>
+{{/each}}
+</div>
+<a href="catalogo"><h3 class="margin title">Ver Más</h3></a>

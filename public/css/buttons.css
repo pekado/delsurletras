@@ -78,3 +78,45 @@ div.nav a
       text-align: left;
     }
   }
+
+  .title {
+    font-size: 25px;
+    color: #584e4a;
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding-bottom: 8px;
+    margin-left: 40%;
+    margin-right: 40%;
+ }
+ .title:before, .title:after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #f37272;
+    margin: 0 auto;
+ }
+ .title:before {
+    opacity: 0;
+    transform: translateY(- 8px);
+    transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s;
+ }
+ .title:after {
+    opacity: 0;
+    transform: translateY(4px);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
+ }
+ .title:hover:before, .title:focus:before, .title:hover:after, .title:focus:after {
+    opacity: 1;
+    transform: translateY(0);
+ }
+ .title:hover:before, .title:focus:before {
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
+ }
+ .title:hover:after, .title:focus:after {
+    transition: transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s 0.2s;
+ }
+  
