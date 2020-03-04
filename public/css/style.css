@@ -40,7 +40,7 @@ letter-spacing: 0.094em;
   transition: visibility 0s, opacity 0.5s linear;
 }
 
-.eachpic:hover p {
+.eachpic:hover p, .eachpic:active p{
 
   visibility: visible;
   opacity: 1;
@@ -454,6 +454,13 @@ hr.separador {
   }
   .footer{
     justify-content: center;
+  }
+  .eachpic p {
+    visibility: visible;
+  }
+  .authorname {
+    visibility: visible;
+  
   }
 }
 
