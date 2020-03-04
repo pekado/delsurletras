@@ -1,4 +1,4 @@
-  <div id="slider" class="slider-pro margin">
+  <div id="slider" class="slider-pro">
         <div class="sp-slides">
             <div class="sp-slide">
                 <img class="sp-image" src="../src/css/images/blank.gif"
@@ -177,7 +177,7 @@
 	{{#each data.posts}}
 	<div class="gallery-item hidden" data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}">
 		{{#if image}}<img src="/uploads/files/{{{this.image.filename}}}" class="gallery-image">{{/if}}
-		<div class="reviews">
+		<div class="review">
 			<h2><a href="{{postUrl slug}}">{{{title}}}</a></h2>
 			<p>{{{reseña.corta}}}</p>
 			{{#if reseña.corta}}<p class="read-more"><a href="{{postUrl slug}}">Leer más</a></p>{{/if}}

@@ -360,7 +360,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
 }
 
 .review {
-  margin: auto;
+  background-color: rgba(215, 179, 94, 0.24)
 }
 
 
@@ -461,6 +461,9 @@ hr.separador {
   .authorname {
     visibility: visible;
   
+  }
+  .card-flex{
+    display: block;
   }
 }
 
