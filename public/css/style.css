@@ -4,8 +4,7 @@ body {
   font-family: Raleway;
   text-align: center;
   background-color: oldlace;
-  margin-left: 2vw;
-  margin-right: 2vw;
+  margin: 2vw;
 }
 
 .margin {
@@ -156,7 +155,15 @@ a {
 }
 
 #logo {
-  align-content: center;
+  width: 25px;
+  position: relative;
+  top: 2px
+}
+
+#footlogo {
+  height: 150px;
+  position: relative;
+  top: 2px
 }
 
 .flex {
@@ -381,6 +388,8 @@ hr.limit {
 .footbuttons {
   list-style: none;
   text-align: left;
+  position: relative;
+left: -80px;
 }
 
 /*Distribuidores*/
