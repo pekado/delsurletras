@@ -26,7 +26,7 @@ exports = module.exports = function (req, res) {
 	// Load the posts
 	view.on('init', function (next) {
 
-		var q = keystone.list('Post').model.find().limit(6).sort('publishedDate');
+		var q = keystone.list('Post').model.find().limit(9).sort({publishedDate: -1});
 		q.exec(function (err, results) {
 			locals.data.posts = results;
 			console.log(locals.data.posts);

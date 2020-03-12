@@ -8,7 +8,7 @@ body {
 }
 
 .margin {
-  margin: 5vw;
+  margin: 3vw;
 }
 
 .margintext{
@@ -49,6 +49,8 @@ letter-spacing: 0.094em;
   display: flex;
   flex-wrap: wrap;
   list-style: none;
+  position: relative;
+  left: -2vw;
 }
 
 .eachpic {
@@ -131,7 +133,7 @@ letter-spacing: 0.094em;
   font-size: 2em;
   line-height: 1.2;
   text-decoration: none;
-  background-image: linear-gradient(to right, yellow 0, yellow 100%);
+  background-image: linear-gradient(to right, rgb(255, 94, 97) 0, rgb(247, 111, 111) 100%);
   background-position: 0 1.2em;
   background-size: 0 100%;
   background-repeat: no-repeat;
@@ -155,9 +157,9 @@ a {
 }
 
 #logo {
-  width: 25px;
+  width: 40px;
   position: relative;
-  top: 2px
+  top: 4px;
 }
 
 #footlogo {
@@ -226,7 +228,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
 .gallery-image {
   display: block;
   width: 300px;
-  height: 430px;
+  height: 450px;
   object-fit: cover;
   transition: transform 400ms ease-out;
   border-right:1px solid #000;
@@ -426,6 +428,8 @@ hr.separador {
 @media (max-aspect-ratio: 1/1) and (max-width: 480px) {
   .authorsgallery {
     flex-direction: row;
+    position: relative;
+    left: -2vw;
   }
 
   .eachpic {

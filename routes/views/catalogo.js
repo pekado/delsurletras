@@ -57,7 +57,7 @@ exports = module.exports = function (req, res) {
 	// Load the posts
 	view.on('init', function (next) {
 
-		var q = keystone.list('Post').model.find();
+		var q = keystone.list('Post').model.find().sort({publishedDate: -1});
 
 		if (locals.data.category) {
 			q.where('categories').in([locals.data.category]);

@@ -80,10 +80,8 @@ div.nav a
   }
 
   .title {
-    font-size: 25px;
-    color: #584e4a;
+    font-size: 35px;
     position: relative;
-    text-transform: uppercase;
     text-decoration: none;
     padding-bottom: 8px;
     margin-left: 40%;
