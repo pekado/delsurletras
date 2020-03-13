@@ -109,7 +109,7 @@ letter-spacing: 0.094em;
 
 .authors {
   max-height: 100%;
-  min-width: 100%;
+  min-height: 100%;
   object-fit: cover;
   vertical-align: bottom;
   opacity: 1;
@@ -448,7 +448,7 @@ hr.separador {
   .authors {
     width: 100%;
     max-height: 75vh;
-    min-width: 0;
+    min-height: 100%;
   }
 }
 
