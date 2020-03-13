@@ -3,8 +3,13 @@
 body {
   font-family: Raleway;
   text-align: center;
-  background-color: oldlace;
+  background-color: white;
   margin: 2vw;
+}
+
+.limite {
+  border-bottom: .0625rem solid #e3e3e3;
+  padding-bottom: .625rem
 }
 
 .margin {
@@ -159,7 +164,8 @@ a {
 #logo {
   width: 40px;
   position: relative;
-  top: 4px;
+  top: -9px;
+    left: 10px;
 }
 
 #footlogo {
@@ -361,6 +367,8 @@ Remove or comment-out the code block below to see how the browser will fall-back
 .card-flex {
   display: flex;
   justify-content: space-between;
+  margin-left: 6vw;
+  margin-right: 10vw;
 }
 
 .biopic {

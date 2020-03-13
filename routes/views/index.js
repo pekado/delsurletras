@@ -14,7 +14,7 @@ exports = module.exports = function (req, res) {
 	};
 	view.on('init', function (next) {
 
-		var q = keystone.list('autor').model.find();
+		var q = keystone.list('autor').model.find({ "name": { $in: ["Luciano Lutereau", "Ricardo Manetti", "Márgara Averbach", "Fernando Bogado", "Agustina Caride", "Verónica Boix", "Walter Lezcano"] }});
 
 		q.exec(function (err, result) {
 			locals.data.autor = result;
@@ -29,7 +29,7 @@ exports = module.exports = function (req, res) {
 		var q = keystone.list('Post').model.find().limit(9).sort({publishedDate: -1});
 		q.exec(function (err, results) {
 			locals.data.posts = results;
-			console.log(locals.data.posts);
+			
 			next(err);
 		});
 	});
