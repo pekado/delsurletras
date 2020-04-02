@@ -43,7 +43,9 @@ exports = module.exports = function (app) {
 	app.all('/quienesomos', routes.views.quienesomos);
 	app.get('/prensa', routes.views.prensa);
 	app.get('/distribucion', routes.views.distribucion);
+	 // Set disposition and send it.
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
 
 };
+

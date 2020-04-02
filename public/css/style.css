@@ -421,6 +421,11 @@ hr.separador {
   text-align: justify;
 }
 
+#calresp{
+  display: none;
+  width: 320px;
+}
+
 /*media queries */
 @media (max-height: 600px) {
   .card-flex {
@@ -465,7 +470,7 @@ hr.separador {
 }
 
 
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
 
   .image {
     height: 80vh;
@@ -491,6 +496,12 @@ hr.separador {
     height: 500px;
     width: auto;
     margin-top: 50px;
+  }
+  #calresp{
+    display: block;
+  }
+  #cal{
+    display: none;
   }
 }
 

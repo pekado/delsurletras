@@ -23,6 +23,7 @@ exports = module.exports = function (req, res) {
 		});
 
 	});
+
 	// Load the posts
 	view.on('init', function (next) {
 
