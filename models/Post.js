@@ -30,7 +30,10 @@ Post.add({
 		extendida: { type: Types.Html, wysiwyg: true, height: 400 },
 	},
 	ficha: { formato: {type: String, wysiwyg:true, height:50 },
-			paginas: {type: String, wysiwyg:true, height:50 }	
+			paginas: {type: String, wysiwyg:true, height:50 },
+			precio: { type: String, wysiwyg:true, height:50 },
+			audiolibro: { type: Boolean }	
+
 		},
 	categories: { type: Types.Relationship, ref: 'PostCategory', many: true },
 });
