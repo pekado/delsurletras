@@ -15,7 +15,7 @@ exports = module.exports = function (req, res) {
 	// Load the current post
 	view.on('init', function (next) {
 
-		var q = keystone.list('autor').model.find().sort({_id: -1});
+		var q = keystone.list('autor').model.find().sort({_id: 1});
 
 		q.exec(function (err, result) {
 			locals.data.autor = result;
