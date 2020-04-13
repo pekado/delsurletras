@@ -15,7 +15,7 @@ exports = module.exports = function (req, res) {
 	// Load the current post
 	view.on('init', function (next) {
 
-		var q = keystone.list('autor').model.find({ "name": { $in: ["Luciano Lutereau", "Ricardo Manetti", "Márgara Averbach", "Fernando Bogado", "Massimo Recalcati", "Agustina Caride", "Verónica Boix", "Walter Lezcano"] }});
+		var q = keystone.list('autor').model.find().sort({_id: 1});
 
 		q.exec(function (err, result) {
 			locals.data.autor = result;
