@@ -31,11 +31,12 @@ Post.add({
 	},
 	ficha: { formato: {type: String, wysiwyg:true, height:50 },
 			paginas: {type: String, wysiwyg:true, height:50 },
-			precio: { type: String, wysiwyg:true, height:50 },
-			audiolibro: { type: Boolean }	
-
+			ISBN: { type: String, wysiwyg:true, height:50 },
+			cubierta: { type: String, wysiwyg:true, height:50 },
+			autorPrologo: { type: String, wysiwyg:true, height:50 }
 		},
 	categories: { type: Types.Relationship, ref: 'PostCategory', many: true },
+	ebook: { type: String, wysiwyg:true, height:50 }
 });
 
 Post.schema.virtual('reseña.full').get(function () {
