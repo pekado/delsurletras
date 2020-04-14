@@ -1,37 +1,54 @@
+{{#if data.post}}
 
-	{{#if data.post}}
-	
-	<div class="card-flex ">
-		
-		<img class="puff-in-center biopic" src="/uploads/files/{{{data.post.image.filename}}}">
-		<div class="fade-in reseña">
-			<h4 class="titulo">
-			{{{data.post.title}}} <br>
-			de {{{data.post.author}}}
+<div id="descrip">
 
+	<img class="puff-in-center biopic" src="/uploads/files/{{{data.post.image.filename}}}">
+	<div class="fade-in reseña">
+		<ul class="posts">
+			<h1 class="titulo">
+				{{{data.post.title}}} <br>
+			</h1>
 			<h3>
-				{{{data.post.pvp}}}
+				de {{{data.post.author}}}
 			</h3>
 
-		</h3>
-			<p >
-				{{{data.post.reseña.extendida}}}
+			<h4 >
+				${{{data.post.pvp}}}
+			</h4>
+			<li class="post">Acerca de este libro
+				<div class="summary hidden" style="font-weight: 300;font-size: 15px;">
+					<p >
+						{{{data.post.reseña.extendida}}}
 
-			</p>
-			<div>
-				ISBN: {{data.post.ficha.ISBN}} <br/>
-				{{data.post.ficha.cubierta}}, 
-				{{data.post.ficha.formato}}, 
-				{{data.post.ficha.paginas}} páginas. <br>
-				
-					Prólogo: {{data.post.ficha.autorPrologo}}
-				
+					</p>
+				</div>
+			</li>
+			<li class="post">Ficha técnica
+				<div class="summary hidden">
+					<p style="font-weight: 300;font-size: 15px;">
+						ISBN: {{data.post.ficha.ISBN}} <br />
+						{{data.post.ficha.cubierta}},
+						{{data.post.ficha.formato}},
+						{{data.post.ficha.paginas}} páginas. <br>
 
-			</div>
-			<div>
-				<a href="{{data.post.ebook}}">Google Books</a>
-			</div>
-		</div>
+						Prólogo: {{data.post.ficha.autorPrologo}}
+
+					</p>
+				</div>
+			</li>
+			{{#if data.post.ebook}}
+			<li class="post">Ebooks
+				<div class="summary hidden">
+					<div>
+						<p style="font-weight: 300;font-size: 15px;">
+						<a href="{{data.post.ebook}}">Google Books</a>
+						</p>
+					</div>
+				</div>
+			</li>
+			{{/if}}
 	</div>
-	
-	{{/if}}
+	</ul>
+</div>
+
+{{/if}}

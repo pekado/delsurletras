@@ -37,12 +37,12 @@
     <div class="gallery margin">
         {{#each data.posts}}
         <div>
-            <div class="gallery-item hidden"
+           <a href="{{postUrl slug}}"> <div class="gallery-item hidden"
                 data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}">
                 {{#if image}}<img src="/uploads/files/{{{this.image.filename}}}" class="gallery-image">{{/if}}
             </div>
-            <h2><a href="{{postUrl slug}}">{{{title}}}</a></h2>
-        </div>
+            <h2>{{{title}}}</h2>
+        </div></a>
         {{/each}}
     </div>
     <a href="catalogo">

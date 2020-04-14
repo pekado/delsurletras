@@ -426,6 +426,72 @@ hr.separador {
   width: 320px;
 }
 
+
+
+/* libro */
+.reseña {
+  text-align: left;
+  font-weight: 500;
+font-size: 16px;
+line-height: 20px;
+font-style: normal;
+margin-left: 5vw;
+width: 60%;
+}
+
+#descrip{
+  display: flex;
+margin-left: 6vw;
+margin-right: 10vw;
+}
+
+.titulo {
+
+line-height: 46px;
+letter-spacing: 0.132em;
+font-style: normal;
+margin: 0 auto;
+}
+
+#pvp{
+  padding: 24px 0;
+border-top-style: solid;
+border-bottom-style: solid;
+border-bottom-width: 1px;
+border-top-color: #666666;
+border-bottom-color: #666666;
+}
+
+/* toggle reseña */
+
+.summary {
+  display: none;
+
+}
+
+.post {
+  cursor: pointer;
+  text-align: left;
+  border-top-color: #666666;
+  border-bottom-color: #666666;
+  text-decoration: inherit;
+line-height: 1.6;
+padding: 24px 0;
+border-top-style: solid;
+border-bottom-style: solid;
+border-bottom-width: 1px;
+list-style: none;
+border-top: 0 !important;
+font-weight: 800;
+font-size: 16px;
+line-height: 21px;
+font-style: normal;
+}
+
+.posts {
+  list-style-type: none;
+}
+
 /*media queries */
 @media (max-height: 600px) {
   .card-flex {
@@ -435,6 +501,9 @@ hr.separador {
   .biopic {
     height: 300px;
   }
+  #descrip{
+    display: block;
+  }
 }
 
 
@@ -442,7 +511,7 @@ hr.separador {
   .authorsgallery {
     flex-direction: row;
     position: relative;
-    left: -2vw;
+    left: -20px;
   }
 
   .eachpic {
@@ -454,6 +523,23 @@ hr.separador {
     width: 100%;
     max-height: 75vh;
     min-height: 100%;
+  }
+  #descrip{
+    display: block;
+    position: relative;
+    left: -4vw;
+  }
+  .ul{
+    position: relative;
+    left: -40px;
+  }
+  .posts{
+    position: relative;
+    left: -40px;
+  }
+  .title{
+    position: relative;
+    left: -40px;
   }
 }
 
@@ -503,22 +589,11 @@ hr.separador {
   #cal{
     display: none;
   }
-}
-
-/* libro */
-.reseña {
-  text-align: left;
-  font-weight: 500;
-font-size: 16px;
-line-height: 20px;
-font-style: normal;
-margin-left: 5vw;
-}
-
-.titulo {
-  font-size: 2.5em;
-line-height: 46px;
-letter-spacing: 0.132em;
-font-style: normal;
-margin: 0 auto;
+  #descrip{
+    display: block;
+  }
+  .reseña{
+    width: 100%;
+  }
+ 
 }

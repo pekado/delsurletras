@@ -347,3 +347,10 @@ template {
 [hidden] {
   display: none;
 }
+
+@media only screen and (max-width: 480px) {
+  .ul{
+    position: relative;
+    left: -40px;
+  }
+}

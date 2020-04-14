@@ -55,6 +55,12 @@
     <script src="/libs/jquery-1.11.0.min.js"></script>
     <script src="/js/jquery.sliderPro.min.js"></script>
     <script type="text/javascript">
+
+    $(document).ready(function() {
+  $('.post').on('click', function() {
+    $(this).find('.summary').slideToggle();
+  })  
+});
         $(document).ready(function ($) {
             $('#slider').sliderPro({
                 width: 960,
