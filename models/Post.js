@@ -36,7 +36,8 @@ Post.add({
 			autorPrologo: { type: String, wysiwyg:true, height:50 }
 		},
 	categories: { type: Types.Relationship, ref: 'PostCategory', many: true },
-	ebook: { type: String, wysiwyg:true, height:50 }
+	ebook: { type: String, wysiwyg:true, height:50 },
+	pvp: {  type: String, wysiwyg:true, height:50 }
 });
 
 Post.schema.virtual('reseña.full').get(function () {
