@@ -492,6 +492,21 @@ font-style: normal;
   list-style-type: none;
 }
 
+/* quienes somos */
+
+.equipo{
+  font-family: Raleway;
+  font-size: 15px;
+
+}
+
+.equipo .sp-caption{
+  padding-left: 30%;
+  padding-right: 30%;
+}
+
+
+
 /*media queries */
 @media (max-height: 600px) {
   .card-flex {
@@ -579,7 +594,7 @@ font-style: normal;
     display: block;
   }
   .biopic {
-    height: 500px;
+    height: 300px;
     width: auto;
     margin-top: 50px;
   }

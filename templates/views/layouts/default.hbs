@@ -16,8 +16,8 @@
 
 <body onload="animateHTML().init();">
 
-    <a href="/"> 
-    <img id="logo" src="/img/iso.png" alt="logo"> <img style="width: 250px;" src="/img/logowebrojo.png" alt=""></a>
+    <a href="/">
+        <img id="logo" src="/img/iso.png" alt="logo"> <img style="width: 250px;" src="/img/logowebrojo.png" alt=""></a>
 
 
 
@@ -31,9 +31,10 @@
 
 
         <a href="javascript:void(0);" class="icon" onclick="respNav()">
-            <img style="position: relative; bottom: 10px;" src="https://img.icons8.com/ios-filled/50/000000/menu-rounded.png"></a>
+            <img style="position: relative; bottom: 10px;"
+                src="https://img.icons8.com/ios-filled/50/000000/menu-rounded.png"></a>
     </div>
-    
+
     {{{body}}}
     <div class="footer flex nav">
         <div class="brackets">
@@ -56,11 +57,11 @@
     <script src="/js/jquery.sliderPro.min.js"></script>
     <script type="text/javascript">
 
-    $(document).ready(function() {
-  $('.post').on('click', function() {
-    $(this).find('.summary').slideToggle();
-  })  
-});
+        $(document).ready(function () {
+            $('.post').on('click', function () {
+                $(this).find('.summary').slideToggle();
+            })
+        });
         $(document).ready(function ($) {
             $('#slider').sliderPro({
                 width: 960,
@@ -82,30 +83,51 @@
                     }
                 }
             });
-            $('#example5').sliderPro({
-                width: 670,
-                height: 500,
-                orientation: 'horizontal',
-                loop: false,
-                arrows: true,
-                buttons: false,
-                autoplay: false,
-                thumbnailsPosition: 'left',
-                thumbnailPointer: true,
-                thumbnailWidth: 290,
-                breakpoints: {
-                    800: {
-                        thumbnailsPosition: 'bottom',
-                        thumbnailWidth: 270,
-                        thumbnailHeight: 100
-                    },
-                    500: {
-                        thumbnailsPosition: 'bottom',
-                        thumbnailWidth: 120,
-                        thumbnailHeight: 50
-                    }
-                }
+            $(document).ready(function ($) {
+                $('#example2').sliderPro({
+                    width: 100,
+                    height: 400,
+                    visibleSize: '100%',
+                    forceSize: 'fullWidth',
+                    visibleSize: 800,
+                    autoSlideSize: true,
+                    slideDistance: 300,
+                    imageScaleMode: 'none',
+                    arrows: true,
+                });
+
+                // instantiate fancybox when a link is clicked
+                $(".slider-pro").each(function () {
+                    var slider = $(this);
+
+                    slider.find(".sp-image").parent("a").on("click", function (event) {
+                        event.preventDefault();
+
+                        if (slider.hasClass("sp-swiping") === false) {
+                            var sliderInstance = slider.data("sliderPro"),
+                                isAutoplay = sliderInstance.settings.autoplay;
+
+                            $.fancybox.open(slider.find(".sp-image").parent("a"), {
+                                index: $(this).parents(".sp-slide").index(),
+                                afterShow: function () {
+                                    if (isAutoplay === true) {
+                                        sliderInstance.settings.autoplay = false;
+                                        sliderInstance.stopAutoplay();
+                                    }
+                                },
+                                afterClose: function () {
+                                    if (isAutoplay === true) {
+                                        sliderInstance.settings.autoplay = true;
+                                        sliderInstance.startAutoplay();
+                                    }
+                                }
+
+                            });
+                        }
+                    });
+                });
             });
+           
         });
 
 
