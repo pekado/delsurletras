@@ -83,7 +83,7 @@
                     }
                 }
             });
-            $(document).ready(function ($) {
+            {{!-- $(document).ready(function ($) {
                 $('#example2').sliderPro({
                     width: 100,
                     height: 400,
@@ -94,6 +94,7 @@
                     slideDistance: 300,
                     imageScaleMode: 'none',
                     arrows: true,
+                    orientation: 'vertical',
                 });
 
                 // instantiate fancybox when a link is clicked
@@ -126,8 +127,35 @@
                         }
                     });
                 });
-            });
-           
+            }); --}}
+           $( document ).ready(function( $ ) {
+		$( '#example5' ).sliderPro({
+			width: 670,
+			height: 400,
+			orientation: 'vertical',
+			loop: false,
+			arrows: true,
+			buttons: false,
+			thumbnailsPosition: 'left',
+			thumbnailPointer: true,
+			thumbnailWidth: 290,
+            imageScaleMode: 'contain',
+			breakpoints: {
+				800: {
+					thumbnailsPosition: 'bottom',
+					thumbnailWidth: 270,
+					thumbnailHeight: 100,
+                    thumbnailPointer: false
+				},
+				500: {
+					thumbnailsPosition: 'bottom',
+					thumbnailWidth: 120,
+					thumbnailHeight: 50,
+                    thumbnailPointer: false,
+				}
+			}
+		});
+	});
         });
 
 
