@@ -1,18 +1,40 @@
 <div class="container">
-	<h1>Catálogo</h1>
-	<h3><a href="/catalogo" class="active list-group-item colecciones">Todas las categorías</a>
-		{{#each data.categories }}
-		<a href="{{categoryUrl key}}" class="false list-group-item colecciones"> - {{name}}</a>
-		{{/each}}</h3>
+	<h1 class="title">Catálogo</h1>
+	<ul class="posts flex">
+		<li class="active list-group-item colecciones margin title">No ficción
+			<div class="summary hidden">
+				{{#each data.noficcion }}
+				<a href="{{categoryUrl key}}" class="false list-group-item colecciones"> - {{name}}</a>
+				{{/each}}</h3>
+			</div>
+		</li>
+		<li class="active list-group-item colecciones margin title">Ficción
+			<div class="summary hidden">
+				{{#each data.ficcion }}
+				<a href="{{categoryUrl key}}" class="false list-group-item colecciones"> - {{name}}</a>
+				{{/each}}</h3>
+			</div>
+		</li>
+	</ul>
+</div>
+
+<div>
+	<ul>
+		{{#if data.categories}}
+		{{#each data.categories.name}}
+		<li>{{name}}</li>
+		{{/each}}
+		{{/if}}
+	</ul>
 </div>
 <div class="gallery margin">
 	{{#each data.posts}}
 	<div>
-	<div class="gallery-item hidden" data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}">
-		{{#if image}}<img src="/uploads/files/{{{this.image.filename}}}" class="gallery-image">{{/if}}
+		<div class="gallery-item hidden" data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}">
+			{{#if image}}<img src="/uploads/files/{{{this.image.filename}}}" class="gallery-image">{{/if}}
+		</div>
+		<h2><a href="{{postUrl slug}}">{{{title}}}</a></h2>
 	</div>
-    <h2><a href="{{postUrl slug}}">{{{title}}}</a></h2>	
-    </div>
 	{{/each}}
-	
+
 </div>

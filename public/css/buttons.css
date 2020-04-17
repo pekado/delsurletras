@@ -84,8 +84,8 @@ div.nav a
     position: relative;
     text-decoration: none;
     padding-bottom: 8px;
-    margin-left: 40%;
-    margin-right: 40%;
+    width: max-content;
+    margin: 3vw auto;
  }
  .title:before, .title:after {
     content: '';
