@@ -463,6 +463,12 @@ border-top-color: #666666;
 border-bottom-color: #666666;
 }
 
+.rrss{
+  width: 30px;
+  height: auto;
+  margin: 5px;
+}
+
 /* toggle reseña */
 
 .summary {
